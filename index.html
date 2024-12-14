@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stone Paper Scissors Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+
+    <div class="start-screen">
+      <button class="start-btn">Start Game</button>
+    </div>
+
+    <div class="mode-selection-screen" style="display: none;">
+      <h2>Select Game Mode</h2>
+      <button class="mode-btn" id="play-ai">Play with AI</button>
+      <button class="mode-btn" id="play-friend">Play with Friend</button>
+ 
+      <button class="mode-btn" id="play-tournament">Play Tournament</button>
+    </div>
+
+    <div class="game-screen" style="display: none;">
+      <h2>Stone Paper Scissors</h2>
+      <div class="choices">
+        <button class="choice-btn" id="stone">
+          <img src="rock.png" alt="Stone">
+        </button>
+        <button class="choice-btn" id="paper">
+          <img src="paper.png" alt="Paper">
+        </button>
+        <button class="choice-btn" id="scissors">
+          <img src="scissors.png" alt="Scissors">
+        </button>
+      </div>
+
+      <div class="scoreboard">
+        <p>Rounds Played: <span id="rounds-played">0</span> / 5</p>
+        <p>Your Score: <span id="player-score">0</span> - AI Score: <span id="ai-score">0</span></p>
+      </div>
+
+      <div class="game-result">
+        <p id="result"></p>
+      </div>
+    </div>
+
+    <div class="end-screen" style="display: none;">
+      <h1 id="final-winner"></h1>
+      <button class="play-again-btn">Play Again</button>
+    </div>
+
+    <div class="background"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
