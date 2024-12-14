@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EAEAEA;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #ff8c00, #ff0099);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-container {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Slight transparency to show background image */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for modern look */
+  width: 90%; /* To make it responsive */
+  max-width: 600px; /* Increased max width for a bigger box */
+  animation: bounceIn 1s ease-out; /* Added bounce animation */
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.8rem;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #2d3a4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #1f2634;
+  transform: scale(1.05);
+}
+
+.game-screen, .mode-selection-screen, .end-screen {
+  display: none;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Increased gap between the buttons */
+  margin-top: 20px;
+  width: 100%; /* Ensure choices container spans the width */
+}
+
+.choices .choice-btn {
+  width: 150px;  /* Increased size */
+  height: 150px; /* Increased size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Removed background color */
+  border-radius: 50%; /* Made image round */
+  border: none; /* Removed border */
+  box-shadow: none; /* Removed shadow */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.choices .choice-btn img {
+  width: 120px;  /* Increased image size */
+  height: 120px; /* Increased image size */
+  object-fit: cover; /* Ensures images fit the circle shape */
+  border-radius: 50%; /* Ensures the image is also round */
+  transition: transform 0.2s ease-in-out;
+}
+
+.choices .choice-btn:hover img {
+  transform: scale(1.1);
+}
+
+.scoreboard p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.game-result p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: #f1f1f1;
+}
+
+.end-screen h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 20px;
+  color: #333;
+}
+
+.final-winner {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green to signify winner */
+  margin-bottom: 20px;
+}
+
+.play-again-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.play-again-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .game-container {
+      padding: 20px;
+      width: 85%;
+      max-width: 400px;
+  }
+
+  button {
+      font-size: 1.6rem;
+      padding: 12px 24px;
+  }
+
+  .choices .choice-btn {
+      width: 120px;  /* Adjusted for mobile size */
+      height: 120px; /* Adjusted for mobile size */
+  }
+
+  .scoreboard p,
+  .game-result p {
+      font-size: 1.4rem;
+  }
+
+  .end-screen h1 {
+      font-size: 1.8rem;
+  }
+
+  .final-winner {
+      font-size: 2rem;
+  }
+
+  .play-again-btn {
+      font-size: 1.6rem;
+  }
+}
